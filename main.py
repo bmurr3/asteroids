@@ -34,6 +34,10 @@ def main() -> None:
         
         for item in updatable:
             item.update(dt)
+        for asteroid in asteroids:
+            if asteroid.is_collided(player):
+                print('Game over!')
+                return
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
